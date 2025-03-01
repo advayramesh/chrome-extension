@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "AI Autocomplete",
+  "version": "1.0",
+  "description": "AI-powered autocomplete for text fields on any website.",
+  "permissions": ["activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  }
+} 

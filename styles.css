@@ -1,0 +1,7 @@
+.suggestion {
+  font-family: inherit;
+  font-size: inherit;
+  color: gray;
+  position: absolute;
+  pointer-events: none;
+} 
