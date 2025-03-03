@@ -1,7 +1,63 @@
-.suggestion {
+/* AI Autocomplete Extension Styles */
+
+/* Tooltip Styles */
+.ai-autocomplete-tooltip {
+  position: absolute;
+  background-color: rgba(50, 50, 50, 0.95);
+  color: #ffffff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  z-index: 10000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  max-width: 300px;
+  word-wrap: break-word;
+  transition: opacity 0.2s ease;
+}
+
+/* Notification Styles */
+.ai-autocomplete-notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(50, 50, 50, 0.9);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  z-index: 9999;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease;
+}
+
+/* Ghost Text Styles (for inline suggestions) */
+.ai-ghost-text {
+  position: absolute;
+  color: rgba(128, 128, 128, 0.8);
+  background: transparent;
+  pointer-events: none;
+  z-index: 9998;
   font-family: inherit;
   font-size: inherit;
-  color: gray;
-  position: absolute;
-  pointer-events: none;
+  white-space: pre;
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .ai-autocomplete-tooltip {
+    background-color: rgba(70, 70, 70, 0.95);
+    color: #f0f0f0;
+  }
+  
+  .ai-autocomplete-notification {
+    background-color: rgba(70, 70, 70, 0.9);
+    color: #f0f0f0;
+  }
+  
+  .ai-ghost-text {
+    color: rgba(170, 170, 170, 0.8);
+  }
 } 

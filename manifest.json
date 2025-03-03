@@ -1,20 +1,36 @@
 {
-  "manifest_version": 3,
-  "name": "AI Autocomplete",
-  "version": "1.0",
-  "description": "AI-powered autocomplete for text fields on any website.",
-  "permissions": ["activeTab", "scripting"],
-  "background": {
-    "service_worker": "background.js"
-  },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"],
-      "css": ["styles.css"]
+    "manifest_version": 3,
+    "name": "AI Autocomplete",
+    "version": "1.0.0",
+    "description": "AI-powered text autocomplete for any input field",
+    "permissions": [
+      "storage",
+      "activeTab"
+    ],
+    "host_permissions": [
+      "https://api.groq.com/*"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"],
+        "css": ["styles.css"]
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": ["utils.js"],
+        "matches": ["<all_urls>"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "apple-touch-icon.png"
+    },
+    "icons": {
+      "128": "apple-touch-icon.png"
     }
-  ],
-  "action": {
-    "default_popup": "popup.html"
   }
-} 
